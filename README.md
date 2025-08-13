@@ -150,19 +150,97 @@ marketing-website/
 
 ## Customization
 
-### Styling
+### Design & Styling
 
 The project uses Tailwind CSS for styling. You can customize:
 
-- **Colors**: Edit `tailwind.config.js` for brand colors
-- **Components**: Modify component styles in individual files
-- **Layout**: Update the layout structure in `App.tsx`
+#### **Colors & Branding**
+- **Primary Colors**: Edit `tailwind.config.js` to change your brand colors
+- **Color Palette**: Update the `primary` and `secondary` color schemes
+- **Custom Colors**: Add new color variables for specific use cases
 
-### Content
+#### **Component Styling**
+- **Individual Components**: Modify styles in `src/components/` files
+- **Page Layouts**: Update page-specific styles in `src/pages/` files
+- **Responsive Design**: Adjust breakpoints and mobile layouts
+- **Animations**: Customize Framer Motion animations for different effects
 
-- **CMS Fields**: Modify `public/admin/config.yml` to add/remove fields
-- **Default Content**: Update content in `src/content/` files
-- **Page Structure**: Edit page components in `src/pages/`
+#### **Layout & Structure**
+- **Header/Footer**: Edit `src/components/Header.tsx` and `src/components/Footer.tsx`
+- **Navigation**: Modify menu structure and styling
+- **Page Layouts**: Update the overall page structure in `src/App.tsx`
+- **Grid Systems**: Adjust the responsive grid layouts
+
+#### **Typography & Spacing**
+- **Fonts**: Update font families in `tailwind.config.js`
+- **Text Sizes**: Modify heading and body text sizes
+- **Spacing**: Adjust padding, margins, and component spacing
+- **Line Heights**: Customize text readability and spacing
+
+### Content Management
+
+#### **CMS Content (Recommended for Non-Technical Users)**
+- **CMS Fields**: Modify `public/admin/config.yml` to add/remove content fields
+- **Content Structure**: Update the CMS collections and field types
+- **Media Uploads**: Configure image and file upload settings
+
+#### **Direct File Editing (For Developers)**
+- **Markdown Files**: Edit content directly in `src/content/` files
+- **Default Content**: Update fallback content in `src/hooks/useContent.ts`
+- **Content Types**: Modify TypeScript interfaces for content structure
+
+### Adding New Features
+
+#### **New Pages**
+1. Create a new page component in `src/pages/`
+2. Add the route to `src/App.tsx`
+3. Add navigation links in `src/components/Header.tsx`
+4. Create CMS configuration in `public/admin/config.yml`
+5. Add content file in `src/content/`
+
+#### **New Components**
+1. Create reusable components in `src/components/`
+2. Import and use them in your pages
+3. Add to the CMS if the component needs editable content
+
+#### **New Animations**
+1. Import additional Framer Motion components
+2. Add animation variants and transitions
+3. Apply to existing or new components
+
+## Workflow Guide
+
+### **When to Use Each Editing Method**
+
+#### **Content Changes (Text, Images, Data)**
+- **Use CMS Admin**: `/admin` interface for regular content updates
+- **Use Code Editor**: For bulk content changes or initial setup
+- **Avoid Conflicts**: Don't edit the same content in both places simultaneously
+
+#### **Design Changes (Styling, Layout, Components)**
+- **Use Code Editor**: Always edit design in Cursor/your preferred editor
+- **Never Use CMS**: Design changes should never be made through the CMS
+- **Test Locally**: Use `npm start` to preview design changes before deploying
+
+#### **New Features (Pages, Components, Functionality)**
+- **Use Code Editor**: All new features require code changes
+- **Follow Structure**: Use the existing patterns and file organization
+- **Update CMS**: Add new content fields to CMS if needed
+
+### **Development Workflow**
+
+1. **Make Changes**: Edit files in your code editor
+2. **Test Locally**: Run `npm start` to preview changes
+3. **Commit Changes**: `git add . && git commit -m "Description"`
+4. **Push to GitHub**: `git push origin main`
+5. **Deploy**: Netlify automatically deploys from GitHub
+
+### **CMS Workflow**
+
+1. **Access CMS**: Go to `your-site.netlify.app/admin`
+2. **Edit Content**: Use the visual interface to update content
+3. **Publish**: Click "Publish" to save changes
+4. **Auto-Deploy**: Changes are automatically committed and deployed
 
 ### Adding New Pages
 
