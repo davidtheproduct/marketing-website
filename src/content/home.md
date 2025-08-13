@@ -1,0 +1,31 @@
+---
+layout: home
+title: "Home"
+heroTitle: "Transform Your Workflow with Smart Solutions"
+heroSubtitle: "Streamline your processes, automate repetitive tasks, and focus on what truly matters. Join thousands of professionals who've already upgraded their productivity."
+heroCtaText: "Get Started Free"
+heroCtaLink: "/contact"
+features:
+  - name: "Lightning Fast"
+    description: "Get things done in seconds, not minutes. Our optimized platform ensures you never wait."
+    icon: "RocketLaunchIcon"
+  - name: "Secure & Reliable"
+    description: "Your data is protected with enterprise-grade security. We take privacy seriously."
+    icon: "ShieldCheckIcon"
+  - name: "Smart Automation"
+    description: "Let our AI handle the repetitive tasks while you focus on what matters most."
+    icon: "SparklesIcon"
+testimonials:
+  - content: "This app has completely transformed how I work. It's intuitive, fast, and actually fun to use!"
+    author: "Sarah Johnson"
+    role: "Product Manager"
+    company: "TechCorp"
+  - content: "I've tried many solutions, but this one just works. The automation features save me hours every week."
+    author: "Mike Chen"
+    role: "Freelance Developer"
+    company: "Independent"
+  - content: "The customer support is incredible. They helped me set everything up in minutes, not days."
+    author: "Emily Rodriguez"
+    role: "Small Business Owner"
+    company: "Local Cafe"
+---

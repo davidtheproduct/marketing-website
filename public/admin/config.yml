@@ -1,0 +1,134 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "src/content/home.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "home" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Hero CTA Text", name: "heroCtaText", widget: "string" }
+          - { label: "Hero CTA Link", name: "heroCtaLink", widget: "string" }
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Icon", name: "icon", widget: "string" }
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Content", name: "content", widget: "text" }
+              - { label: "Author", name: "author", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Company", name: "company", widget: "string" }
+
+      - name: "about"
+        label: "About Page"
+        file: "src/content/about.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "about" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Mission", name: "mission", widget: "markdown" }
+          - { label: "Vision", name: "vision", widget: "markdown" }
+          - label: "Team"
+            name: "team"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Image", name: "image", widget: "image" }
+
+      - name: "how-it-works"
+        label: "How It Works Page"
+        file: "src/content/how-it-works.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "how-it-works" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - label: "Steps"
+            name: "steps"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Icon", name: "icon", widget: "string" }
+
+      - name: "contact"
+        label: "Contact Page"
+        file: "src/content/contact.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "contact" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
+
+      - name: "faqs"
+        label: "FAQs Page"
+        file: "src/content/faqs.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "faqs" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "markdown" }
+
+      - name: "terms"
+        label: "Terms Page"
+        file: "src/content/terms.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "terms" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "content", widget: "markdown" }
+
+      - name: "privacy"
+        label: "Privacy Page"
+        file: "src/content/privacy.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "privacy" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "content", widget: "markdown" }
+
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - name: "settings"
+        label: "Site Settings"
+        file: "src/content/site-settings.md"
+        fields:
+          - { label: "Site Title", name: "siteTitle", widget: "string" }
+          - { label: "Site Description", name: "siteDescription", widget: "text" }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - label: "Social Media"
+            name: "socialMedia"
+            widget: "object"
+            fields:
+              - { label: "Twitter", name: "twitter", widget: "string" }
+              - { label: "LinkedIn", name: "linkedin", widget: "string" }
+              - { label: "GitHub", name: "github", widget: "string" }
