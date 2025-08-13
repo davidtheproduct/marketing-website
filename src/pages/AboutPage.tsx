@@ -7,8 +7,10 @@ import {
   ArrowRightIcon
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
+import { useAboutContent } from '../hooks/useContent';
 
 const AboutPage: React.FC = () => {
+  const content = useAboutContent();
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -21,13 +23,10 @@ const AboutPage: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Building the Future of{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">
-                  Work
-                </span>
+                {content.heroTitle || "Building the Future of Work"}
               </h1>
               <p className="mt-6 text-xl text-gray-600 leading-relaxed">
-                We're passionate about creating tools that make work more efficient, enjoyable, and meaningful for everyone.
+                {content.heroSubtitle || "We're passionate about creating tools that make work more efficient, enjoyable, and meaningful for everyone."}
               </p>
             </motion.div>
           </div>

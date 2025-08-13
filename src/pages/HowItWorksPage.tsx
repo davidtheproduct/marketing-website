@@ -8,8 +8,10 @@ import {
   ArrowRightIcon
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
+import { useHowItWorksContent } from '../hooks/useContent';
 
 const HowItWorksPage: React.FC = () => {
+  const content = useHowItWorksContent();
   const steps = [
     {
       title: "Connect Your Tools",

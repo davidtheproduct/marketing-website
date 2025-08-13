@@ -6,8 +6,10 @@ import {
   MapPinIcon,
   PaperAirplaneIcon
 } from '@heroicons/react/24/outline';
+import { useContactContent } from '../hooks/useContent';
 
 const ContactPage: React.FC = () => {
+  const content = useContactContent();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,13 +42,10 @@ const ContactPage: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Get in{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">
-                  Touch
-                </span>
+                {content.heroTitle || "Get in Touch"}
               </h1>
               <p className="mt-6 text-xl text-gray-600 leading-relaxed">
-                Ready to transform your workflow? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                {content.heroSubtitle || "Ready to transform your workflow? We'd love to hear from you. Send us a message and we'll respond as soon as possible."}
               </p>
             </motion.div>
           </div>
@@ -150,7 +149,7 @@ const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                    <p className="text-gray-600">hello@workflowplatform.com</p>
+                    <p className="text-gray-600">{content.email || "hello@workflowplatform.com"}</p>
                     <p className="text-sm text-gray-500 mt-1">We typically respond within 24 hours</p>
                   </div>
                 </div>
@@ -161,7 +160,7 @@ const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">{content.phone || "+1 (555) 123-4567"}</p>
                     <p className="text-sm text-gray-500 mt-1">Mon-Fri 9AM-6PM PST</p>
                   </div>
                 </div>
@@ -173,9 +172,7 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Office</h3>
                     <p className="text-gray-600">
-                      123 Innovation Drive<br />
-                      San Francisco, CA 94105<br />
-                      United States
+                      {content.address || "123 Innovation Drive, San Francisco, CA 94105, United States"}
                     </p>
                   </div>
                 </div>
