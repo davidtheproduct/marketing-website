@@ -9,6 +9,7 @@ import {
   CheckCircleIcon
 } from '@heroicons/react/24/outline';
 import { useHomeContent } from '../hooks/useContent';
+import SEO from '../components/SEO';
 
 // Icon mapping function
 const getIconComponent = (iconName: string) => {
@@ -71,6 +72,12 @@ const HomePage: React.FC = () => {
   ];
   return (
     <div className="bg-white">
+      <SEO 
+        title="Workflow Platform - Transform Your Workflow with Smart Solutions"
+        description="Streamline your processes, automate repetitive tasks, and focus on what truly matters. Join thousands of professionals who've already upgraded their productivity."
+        keywords="workflow automation, productivity tools, business efficiency, task management, smart solutions"
+        url="https://dw-mrk.netlify.app"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50">
         <div className="container-max section-padding">

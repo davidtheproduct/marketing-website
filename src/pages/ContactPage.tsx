@@ -7,6 +7,7 @@ import {
   PaperAirplaneIcon
 } from '@heroicons/react/24/outline';
 import { useContactContent } from '../hooks/useContent';
+import SEO from '../components/SEO';
 
 const ContactPage: React.FC = () => {
   const content = useContactContent();
@@ -32,6 +33,12 @@ const ContactPage: React.FC = () => {
 
   return (
     <div className="bg-white">
+      <SEO 
+        title="Contact Us - Workflow Platform | Get in Touch"
+        description="Ready to transform your workflow? We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+        keywords="contact us, support, get in touch, workflow platform contact"
+        url="https://dw-mrk.netlify.app/contact"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50">
         <div className="container-max section-padding">

@@ -8,12 +8,19 @@ import {
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { useAboutContent } from '../hooks/useContent';
+import SEO from '../components/SEO';
 
 const AboutPage: React.FC = () => {
   const content = useAboutContent();
   return (
     <div className="bg-white">
-      {/* Hero Section */}
+      <SEO 
+        title="About Us - Workflow Platform | Building the Future of Work"
+        description="We're passionate about creating tools that make work more efficient, enjoyable, and meaningful for everyone. Meet our team and learn about our mission."
+        keywords="about us, company mission, team, workflow platform, company culture"
+        url="https://dw-mrk.netlify.app/about"
+      />
+          {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50">
         <div className="container-max section-padding">
           <div className="text-center max-w-4xl mx-auto">

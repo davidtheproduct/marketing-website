@@ -5,6 +5,7 @@ import {
   QuestionMarkCircleIcon
 } from '@heroicons/react/24/outline';
 import { useFAQsContent } from '../hooks/useContent';
+import SEO from '../components/SEO';
 
 const FAQsPage: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -52,6 +53,12 @@ const FAQsPage: React.FC = () => {
 
   return (
     <div className="bg-white">
+      <SEO 
+        title="Frequently Asked Questions - Workflow Platform"
+        description="Find answers to the most common questions about our platform, pricing, and features. Get help with your workflow automation needs."
+        keywords="FAQ, frequently asked questions, workflow platform help, support, pricing questions"
+        url="https://dw-mrk.netlify.app/faqs"
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50">
         <div className="container-max section-padding">
