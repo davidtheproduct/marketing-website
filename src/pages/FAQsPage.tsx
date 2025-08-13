@@ -4,14 +4,17 @@ import {
   ChevronDownIcon,
   QuestionMarkCircleIcon
 } from '@heroicons/react/24/outline';
+import { useFAQsContent } from '../hooks/useContent';
 
 const FAQsPage: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const content = useFAQsContent();
 
-  const faqs = [
+  // Use CMS content if available, otherwise fall back to default
+  const faqs = content.faqs || [
     {
       question: "How does the free trial work?",
-      answer: "Our free trial gives you full access to all features for 14 days. No credit card required to start. You can upgrade to a paid plan at any time during or after the trial period."
+      answer: "Our free trial gives you full access to all features for 7 days. No credit card required to start. You can upgrade to a paid plan at any time during or after the trial period."
     },
     {
       question: "What payment methods do you accept?",
