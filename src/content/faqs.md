@@ -10,9 +10,9 @@ faqs:
       credit card required to start. You can upgrade to a paid plan at any time
       during or after the trial period.
   - question: What payment methods do you accept?
-    answer: We accept all major credit cards (Visa, MasterCard, American Express),
-      PayPal, and bank transfers for annual plans. All payments are processed
-      securely through Stripe.
+    answer: We accept all major credit cards (Visa, MasterCard, Amex), PayPal, and
+      bank transfers for annual plans. All payments are processed securely
+      through Stripe.
   - question: Can I cancel my subscription anytime?
     answer: Yes, you can cancel your subscription at any time from your account
       settings. You'll continue to have access to your plan until the end of
