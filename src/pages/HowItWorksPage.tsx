@@ -51,13 +51,10 @@ const HowItWorksPage: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                How It{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">
-                  Works
-                </span>
+                {content.heroTitle || "How It Works"}
               </h1>
               <p className="mt-6 text-xl text-gray-600 leading-relaxed">
-                Getting started is simple. Follow these four easy steps to transform your workflow and boost productivity.
+                {content.heroSubtitle || "Getting started is simple. Follow these four easy steps to transform your workflow and boost productivity."}
               </p>
             </motion.div>
           </div>

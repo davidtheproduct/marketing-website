@@ -129,6 +129,7 @@ const defaultHomeContent: HomeContent = {
 
 export const useContent = <T>(contentType: string, defaultContent: T): T => {
   const [content, setContent] = useState<T>(defaultContent);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
