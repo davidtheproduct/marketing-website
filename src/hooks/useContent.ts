@@ -147,7 +147,8 @@ export const useContent = <T>(contentType: string, defaultContent: T): T => {
     };
 
     fetchContent();
-  }, [contentType, defaultContent]);
+    // Only re-run when the content type changes to avoid infinite loops
+  }, [contentType]);
 
   return content;
 };
