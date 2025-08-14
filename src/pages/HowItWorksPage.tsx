@@ -9,6 +9,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { useHowItWorksContent } from '../hooks/useContent';
+import { Button } from 'components/ui/button';
 
 const HowItWorksPage: React.FC = () => {
   const content = useHowItWorksContent();
@@ -225,17 +226,19 @@ const HowItWorksPage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
-                to="/contact" 
-                className="btn-white inline-flex items-center"
+                to="/contact"
               >
-                Start Free Trial
-                <ArrowRightIcon className="ml-2 h-5 w-5" />
+                <Button variant="white" className="inline-flex items-center">
+                  Start Free Trial
+                  <ArrowRightIcon className="ml-2 h-5 w-5" />
+                </Button>
               </Link>
               <Link 
-                to="/contact" 
-                className="btn-outline-white inline-flex items-center"
+                to="/contact"
               >
-                Schedule Demo
+                <Button variant="outline" className="inline-flex items-center">
+                  Schedule Demo
+                </Button>
               </Link>
             </div>
           </motion.div>

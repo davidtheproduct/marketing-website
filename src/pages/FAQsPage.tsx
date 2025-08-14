@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  ChevronDownIcon,
   QuestionMarkCircleIcon
 } from '@heroicons/react/24/outline';
 import { useFAQsContent } from '../hooks/useContent';
-import SEO from '../components/SEO';
+import SEO from 'components/SEO';
+import { Button } from 'components/ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from 'components/ui/accordion';
 
 const FAQsPage: React.FC = () => {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const content = useFAQsContent();
 
   // Use CMS content if available, otherwise fall back to default
@@ -47,10 +47,6 @@ const FAQsPage: React.FC = () => {
     }
   ];
 
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
-
   return (
     <div className="bg-white">
       <SEO 
@@ -86,45 +82,23 @@ const FAQsPage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="container-max">
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
+            <Accordion type="single" collapsible className="w-full divide-y divide-gray-200 rounded-xl border border-gray-200">
               {faqs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <button
-                    onClick={() => toggleFaq(index)}
-                    className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-                  >
+                <AccordionItem key={index} value={`item-${index}`} className="px-6">
+                  <AccordionTrigger className="py-6">
                     <div className="flex items-start space-x-4">
                       <QuestionMarkCircleIcon className="h-6 w-6 text-primary-600 flex-shrink-0 mt-1" />
-                      <h3 className="text-lg font-semibold text-gray-900">{faq.question}</h3>
+                      <span className="text-lg font-semibold text-gray-900">{faq.question}</span>
                     </div>
-                    <ChevronDownIcon 
-                      className={`h-5 w-5 text-gray-500 transition-transform ${
-                        openFaq === index ? 'rotate-180' : ''
-                      }`} 
-                    />
-                  </button>
-                  {openFaq === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="px-6 pb-6"
-                    >
-                      <div className="pl-10">
-                        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                      </div>
-                    </motion.div>
-                  )}
-                </motion.div>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="pl-10 pr-2 pb-6">
+                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </div>
         </div>
       </section>
@@ -144,17 +118,11 @@ const FAQsPage: React.FC = () => {
               Can't find what you're looking for? Our support team is here to help you get the answers you need.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/contact" 
-                className="btn-primary inline-flex items-center"
-              >
-                Contact Support
+              <a href="/contact">
+                <Button className="inline-flex items-center">Contact Support</Button>
               </a>
-              <a 
-                href="/how-it-works" 
-                className="btn-outline inline-flex items-center"
-              >
-                Learn More
+              <a href="/how-it-works">
+                <Button variant="outline" className="inline-flex items-center">Learn More</Button>
               </a>
             </div>
           </motion.div>

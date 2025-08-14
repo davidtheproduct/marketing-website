@@ -8,7 +8,8 @@ import {
 } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { useAboutContent } from '../hooks/useContent';
-import SEO from '../components/SEO';
+import SEO from 'components/SEO';
+import { Button } from 'components/ui/button';
 
 const AboutPage: React.FC = () => {
   const content = useAboutContent();
@@ -158,11 +159,12 @@ const AboutPage: React.FC = () => {
               Join thousands of professionals who've already upgraded their productivity with our platform.
             </p>
             <Link 
-              to="/contact" 
-              className="btn-white inline-flex items-center"
+              to="/contact"
             >
-              Get Started Today
-              <ArrowRightIcon className="ml-2 h-5 w-5" />
+              <Button variant="white" className="inline-flex items-center">
+                Get Started Today
+                <ArrowRightIcon className="ml-2 h-5 w-5" />
+              </Button>
             </Link>
           </motion.div>
         </div>

@@ -9,7 +9,9 @@ import {
   CheckCircleIcon
 } from '@heroicons/react/24/outline';
 import { useHomeContent } from '../hooks/useContent';
-import SEO from '../components/SEO';
+import SEO from 'components/SEO';
+import { Button } from 'components/ui/button';
+import { Card, CardContent } from 'components/ui/card';
 
 // Icon mapping function
 const getIconComponent = (iconName: string) => {
@@ -94,12 +96,16 @@ const HomePage: React.FC = () => {
                 {content.heroSubtitle || "Streamline your processes, automate repetitive tasks, and focus on what truly matters. Join thousands of professionals who've already upgraded their productivity."}
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link to={content.heroCtaLink || "/contact"} className="btn-primary inline-flex items-center">
-                  {content.heroCtaText || "Get Started Free"}
-                  <ArrowRightIcon className="ml-2 h-5 w-5" />
+                <Link to={content.heroCtaLink || "/contact"}>
+                  <Button className="inline-flex items-center">
+                    {content.heroCtaText || "Get Started Free"}
+                    <ArrowRightIcon className="ml-2 h-5 w-5" />
+                  </Button>
                 </Link>
-                <Link to="/how-it-works" className="btn-outline inline-flex items-center">
-                  See How It Works
+                <Link to="/how-it-works">
+                  <Button variant="outline" className="inline-flex items-center">
+                    See How It Works
+                  </Button>
                 </Link>
               </div>
               <div className="mt-8 flex items-center space-x-6 text-sm text-gray-600">
@@ -208,22 +214,25 @@ const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
               >
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-4 italic">
-                  "{testimonial.content}"
-                </p>
-                <div>
-                  <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role} at {testimonial.company}</p>
-                </div>
+                <Card className="shadow-sm border border-gray-100">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-gray-600 mb-4 italic">
+                      "{testimonial.content}"
+                    </p>
+                    <div>
+                      <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                      <p className="text-sm text-gray-500">{testimonial.role} at {testimonial.company}</p>
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>
@@ -247,12 +256,16 @@ const HomePage: React.FC = () => {
               Start your free trial today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200 inline-flex items-center">
-                Start Free Trial
-                <ArrowRightIcon className="ml-2 h-5 w-5" />
+              <Link to="/contact">
+                <Button variant="white" className="inline-flex items-center">
+                  Start Free Trial
+                  <ArrowRightIcon className="ml-2 h-5 w-5" />
+                </Button>
               </Link>
-              <Link to="/how-it-works" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-medium py-3 px-8 rounded-lg transition-colors duration-200">
-                Learn More
+              <Link to="/how-it-works">
+                <Button variant="outline">
+                  Learn More
+                </Button>
               </Link>
             </div>
           </motion.div>

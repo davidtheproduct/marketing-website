@@ -7,7 +7,11 @@ import {
   PaperAirplaneIcon
 } from '@heroicons/react/24/outline';
 import { useContactContent } from '../hooks/useContent';
-import SEO from '../components/SEO';
+import SEO from 'components/SEO';
+import { Button } from 'components/ui/button';
+import { Input } from 'components/ui/input';
+import { Label } from 'components/ui/label';
+import { Textarea } from 'components/ui/textarea';
 
 const ContactPage: React.FC = () => {
   const content = useContactContent();
@@ -73,72 +77,57 @@ const ContactPage: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Name *
-                    </label>
-                    <input
+                    <Label htmlFor="name" className="mb-2 block">Name *</Label>
+                    <Input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                       placeholder="Your name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email *
-                    </label>
-                    <input
+                    <Label htmlFor="email" className="mb-2 block">Email *</Label>
+                    <Input
                       type="email"
                       id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                       placeholder="your@email.com"
                     />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                    Company
-                  </label>
-                  <input
+                  <Label htmlFor="company" className="mb-2 block">Company</Label>
+                  <Input
                     type="text"
                     id="company"
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
                     placeholder="Your company"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
+                  <Label htmlFor="message" className="mb-2 block">Message *</Label>
+                  <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
                     placeholder="Tell us about your project or how we can help..."
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="btn-primary inline-flex items-center w-full justify-center"
-                >
+                <Button type="submit" className="inline-flex items-center w-full justify-center">
                   Send Message
                   <PaperAirplaneIcon className="ml-2 h-5 w-5" />
-                </button>
+                </Button>
               </form>
             </motion.div>
 
